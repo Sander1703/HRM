@@ -148,7 +148,7 @@ def send_email(email, password):
     message['Subject'] = 'Account Created'
     message['From'] = sender_email
     message['To'] = email
-    text = f'Your automatically generated password is:{password}'
+    text = {f'Your automatically generated password is:{password}'}
     message.attach(MIMEText(text, 'plain'))
     try:
         with smtplib.SMTP(smtp_server, smtp_port) as server:
